@@ -3,6 +3,11 @@ module "resource_group" {
   resource_group_location = "centralindia"
   resource_group_name     = "rg-htodoapp"
 }
+module "resource_group" {
+  source                  = "../MODULES/azurerm_resource_group"
+  resource_group_location = "centralindia"
+  resource_group_name     = "rg-cnis"
+}
 
 module "virtual_network" {
   depends_on               = [module.resource_group]
